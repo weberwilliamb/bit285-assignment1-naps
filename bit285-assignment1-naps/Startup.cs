@@ -25,10 +25,7 @@ namespace bit285_assignment1_naps
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseFileServer();
         }
     }
 }
