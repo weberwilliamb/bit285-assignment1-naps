@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace bit285_assignment1_naps
 {
@@ -16,6 +18,8 @@ namespace bit285_assignment1_naps
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddSingleton<A1_Mod.Repository>();
+            services.AddTransient<A1_Mod.PasswordSuggestionService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -24,7 +28,7 @@ namespace bit285_assignment1_naps
             app.UseMvc(routes =>
             {
                 routes.MapRoute("Default",
-                    "{controller=Naps}/{action=AccountInfo}");
+                            "{controller=Naps}/{action=AccountInfo}");
             }
             );
             if (env.IsDevelopment())

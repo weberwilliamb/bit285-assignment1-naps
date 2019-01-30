@@ -1,14 +1,11 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/naps.css" />
-    <title>Login Page</title>
-</head>
+﻿@{Layout = "_Layout";}
+@model A1_Mod.UserModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <body>
     <h1>Login</h1>
     <fieldset>
-        <form>
+        <form action="Naps/Login" method="post">
             <div>
                 <label>Username</label>
                 <input value="ian@home.com" />
@@ -27,4 +24,3 @@
     </fieldset>
 
 </body>
-</html>

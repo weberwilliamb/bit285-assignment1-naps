@@ -1,14 +1,11 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="/naps.css" />
-    <title>Account Confirmation</title>
-</head>
+﻿@{Layout = "_Layout";}
+@model A1_Mod.UserModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <body>
     <h1>New Account Created</h1>
     <fieldset>
-        <form>
+        <form action="Naps/ConfirmAccount" method="post">
             <div>
                 <label>FirstName</label>
                 <span>Brian</span>
@@ -18,7 +15,7 @@
                 <span>Bansenauer</span>
             </div>            <div>
                 <label>Program</label>
-                <span>Web App Dev</span>
+                <span></span>
             </div>
             <div>
                 <label>Username</label>
@@ -29,11 +26,10 @@
                 <span>bl-blue-Bansenauer</span>
             </div>
             <div>
-                <input type="button" onclick="location.href='/login.html';" value="Go to Login" />
+                <input type="button"  />
                 <input type="button" value="Reset" />
             </div>
         </form>
     </fieldset>
 
 </body>
-</html>
