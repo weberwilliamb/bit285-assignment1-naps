@@ -18,7 +18,8 @@ namespace A1_Mod
     [RegularExpression(".+\\@.+\\..+")]
     public string Email { get; set; }
 
-    [Required(ErrorMessage = "Please enter a password")]
+    [Required(ErrorMessage = "Please enter a password between 8 and 20 characters long!")]
+    [StringLength(18, MinimumLength = 8, ErrorMessage = "Password must be between 8 and 20 characters long")]
     public string Password { get; set; }
 
     [Required(ErrorMessage = "Please enter your program name")]

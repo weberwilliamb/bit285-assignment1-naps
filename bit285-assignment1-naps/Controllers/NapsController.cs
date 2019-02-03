@@ -35,7 +35,7 @@ namespace bit285_assignment1_naps.Controllers
         }
 
         [HttpPost]
-        public IActionResult PasswordInfo1(UserModel UI)
+        public IActionResult PasswordInfo(UserModel UI, String d)
         {
             repository.AddUser(UI);
             return RedirectToAction("SelectPassword", UI);
@@ -48,7 +48,20 @@ namespace bit285_assignment1_naps.Controllers
         }
 
         [HttpPost]
-        public IActionResult SelectPassword1(UserModel UI)
+        public IActionResult SelectPassword(UserModel UI, String d)
+        {
+            repository.AddUser(UI);
+            return RedirectToAction("ConfirmAccount", UI);
+        }
+
+        [HttpGet]
+        public ViewResult ConfirmAccount(UserModel UI)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ConfirmAccount(UserModel UI, String d)
         {
             repository.AddUser(UI);
             return RedirectToAction("ConfirmAccount", UI);
@@ -61,7 +74,7 @@ namespace bit285_assignment1_naps.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login1(UserModel UI)
+        public IActionResult Login(UserModel UI, String d)
         {
             repository.AddUser(UI);
             return RedirectToAction("ConfirmAccount", UI);

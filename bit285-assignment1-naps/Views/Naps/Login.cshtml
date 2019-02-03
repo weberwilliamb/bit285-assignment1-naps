@@ -1,5 +1,5 @@
-﻿@{Layout = "_Layout";}
-@model A1_Mod.UserModel
+﻿@model A1_Mod.UserModel
+@{Layout = "_Layout";}
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <body>
@@ -8,12 +8,12 @@
         <form action="Naps/Login" method="post">
             <div>
                 <label>Username</label>
-                <input value="ian@home.com" />
+                <input asp-for="Email" />
                 <span>* required</span>
             </div>
             <div>
                 <label>Password</label>
-                <input type="password" value="bl-blue-Bansenauer" />
+                <input asp-for="Password" />
                 <span>* required</span>
             </div>
             <div>
