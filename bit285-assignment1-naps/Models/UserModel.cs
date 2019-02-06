@@ -7,13 +7,14 @@ using System.ComponentModel.DataAnnotations;
 namespace A1_Mod 
 {
     public class UserModel
-{
+    {
     [Required(ErrorMessage ="Please enter your first name")]
     public string FirstName { get; set; }
 
     [Required(ErrorMessage = "Please enter your last name")]
     public string LastName { get; set; }
-
+    
+    [EmailAddress]
     [Required(ErrorMessage = "Please enter your email")]
     [RegularExpression(".+\\@.+\\..+")]
     public string Email { get; set; }
@@ -30,5 +31,5 @@ namespace A1_Mod
 
     [Required(ErrorMessage = "Please enter your favorite color")]
     public string FavColor { get; set; }
-}
+    }
 }
