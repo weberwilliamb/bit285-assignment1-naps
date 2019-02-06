@@ -9,12 +9,7 @@ namespace bit285_assignment1_naps.Controllers
 {
     public class NapsController : Controller
     {
-        Repository repository;
-        public NapsController(Repository user)
-        {
-            repository = user;
-        }
-
+        //Account Info Entry
         [HttpGet]
         public ViewResult AccountInfo()
         {
@@ -24,10 +19,10 @@ namespace bit285_assignment1_naps.Controllers
         [HttpPost]
         public IActionResult AccountInfo(UserModel UI)
         {
-            repository.AddUser(UI);
             return RedirectToAction("PasswordInfo", UI);
         }
 
+        //Password Info Entry
         [HttpGet]
         public ViewResult PasswordInfo(UserModel UI)
         {
@@ -37,10 +32,10 @@ namespace bit285_assignment1_naps.Controllers
         [HttpPost]
         public IActionResult PasswordInfo(UserModel UI, String d)
         {
-            repository.AddUser(UI);
             return RedirectToAction("SelectPassword", UI);
         }
 
+        //Password Generator Entry
         [HttpGet]
         public ViewResult SelectPassword(UserModel UI)
         {
@@ -50,10 +45,10 @@ namespace bit285_assignment1_naps.Controllers
         [HttpPost]
         public IActionResult SelectPassword(UserModel UI, String d)
         {
-            repository.AddUser(UI);
             return RedirectToAction("ConfirmAccount", UI);
         }
 
+        //Confirmation Info Entry
         [HttpGet]
         public ViewResult ConfirmAccount(UserModel UI)
         {
@@ -63,10 +58,10 @@ namespace bit285_assignment1_naps.Controllers
         [HttpPost]
         public IActionResult ConfirmAccount(UserModel UI, String d)
         {
-            repository.AddUser(UI);
-            return RedirectToAction("ConfirmAccount", UI);
+            return RedirectToAction("Login", UI);
         }
 
+        //Login Entry
         [HttpGet]
         public ViewResult Login(UserModel UI)
         {
@@ -76,8 +71,7 @@ namespace bit285_assignment1_naps.Controllers
         [HttpPost]
         public IActionResult Login(UserModel UI, String d)
         {
-            repository.AddUser(UI);
-            return RedirectToAction("ConfirmAccount", UI);
+            return RedirectToAction("https://media.giphy.com/media/10UtqJNULHPfxe/giphy.gif");
         }
     }
 }

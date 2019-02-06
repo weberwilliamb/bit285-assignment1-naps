@@ -5,16 +5,16 @@
 <body>
     <h1>Login</h1>
     <fieldset>
-        <form action="Naps/Login" method="post">
+        <form asp-action= "Login" method="post">
             <div>
                 <label>Username</label>
-                <input asp-for="Email" />
-                <span>* required</span>
+                <input asp-for="Email" placeholder="Model.Email" />
+                <span asp-validation-for="Email">* required</span>
             </div>
             <div>
                 <label>Password</label>
-                <input asp-for="Password" />
-                <span>* required</span>
+                <input asp-for="Password" placeholder="Model.Password" />
+                <span asp-validation-for="Password">* required</span>
             </div>
             <div>
                 <input type="button" value="Login" />
